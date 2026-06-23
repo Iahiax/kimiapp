@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kimi 2.6 App</title>
+<script src="https://js.puter.com/v2/"></script>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+
+<h2>Kimi 2.6 Chat</h2>
+
+<textarea id="input" style="width:100%; height:120px;"></textarea>
+<br><br>
+<button onclick="send()" style="padding:10px 20px;">Send</button>
+
+<pre id="output" style="white-space: pre-wrap; margin-top:20px;"></pre>
+
+<script>
+function send() {
+    let text = document.getElementById("input").value;
+    document.getElementById("output").innerText = "Thinking...";
+
+    puter.ai.chat(text, { model: "moonshotai/kimi-k2.6" })
+        .then(r => {
+            document.getElementById("output").innerText = r.output_text;
+        })
+        .catch(err => {
+            document.getElementById("output").innerText = "Error: " + err;
+        });
+}
+</script>
+
+</body>
+</html>
