@@ -38,6 +38,13 @@
 			sourceTree = "<group>";
 		};
 
+		00000LS00000000000000000 /* LaunchScreen.storyboard */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = file.storyboard;
+			path = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+
 		000001F000000000000000F0 /* WebKit.framework */ = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -62,6 +69,7 @@
 				000001A000000000000000A0 /* AppDelegate.swift */,
 				000001B000000000000000B0 /* SceneDelegate.swift */,
 				000001C000000000000000C0 /* ViewController.swift */,
+				00000LS00000000000000000 /* LaunchScreen.storyboard */,
 				00000210000000000000002A /* Resources */,
 			);
 			name = KimiApp;
@@ -112,16 +120,16 @@
 	isa = PBXProject;
 	attributes = {
 		BuildIndependentTargetsInParallel = 1;
-		LastUpgradeCheck = 1400;
+		LastUpgradeCheck = 1500;
 		TargetAttributes = {
 			00000260000000000000002A = {
-				CreatedOnToolsVersion = 14.0;
+				CreatedOnToolsVersion = 15.0;
 				DevelopmentTeam = "";
 			};
 		};
 	};
 	buildConfigurationList = 00000270000000000000002A /* Build configuration list for PBXProject "KimiApp" */;
-	compatibilityVersion = "Xcode 14.0";
+	compatibilityVersion = "Xcode 15.0";
 	developmentRegion = en;
 	hasScannedForEncodings = 0;
 	knownRegions = (
@@ -188,13 +196,10 @@
 	buildActionMask = 2147483647;
 	files = (
 		000001D000000000000000D1 /* index.html in Resources */,
+		00000LS00000000000000001 /* LaunchScreen.storyboard in Resources */,
 	);
 	runOnlyForDeploymentPostprocessing = 0;
 };
-//
-// ========== PROJECT BUILD CONFIGURATIONS ==========
-//
-
 00000270000000000000002A /* Build configuration list for PBXProject "KimiApp" */ = {
 	isa = XCConfigurationList;
 	buildConfigurations = (
@@ -338,10 +343,6 @@
 	};
 	name = Release;
 };
-//
-// ========== TARGET BUILD CONFIGURATIONS ==========
-//
-
 00000290000000000000002A /* Build configuration list for PBXNativeTarget "KimiApp" */ = {
 	isa = XCConfigurationList;
 	buildConfigurations = (
@@ -388,7 +389,7 @@
 		GENERATE_INFOPLIST_FILE = YES;
 
 		INFOPLIST_KEY_CFBundleDisplayName = "KimiApp";
-		INFOPLIST_KEY_UILaunchStoryboardName = "";
+		INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 		INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 
 		// Portrait only
@@ -465,7 +466,7 @@
 		GENERATE_INFOPLIST_FILE = YES;
 
 		INFOPLIST_KEY_CFBundleDisplayName = "KimiApp";
-		INFOPLIST_KEY_UILaunchStoryboardName = "";
+		INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 		INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 
 		// Portrait only
@@ -505,9 +506,7 @@
 	};
 	name = Release;
 };
-//
-// ========== BUILD FILE REFERENCES ==========
-//
+/* ========== BUILD FILE REFERENCES ========== */
 
 000001A000000000000000A1 /* AppDelegate.swift in Sources */ = {
 	isa = PBXBuildFile;
@@ -532,6 +531,11 @@
 000001F000000000000000F1 /* WebKit.framework in Frameworks */ = {
 	isa = PBXBuildFile;
 	fileRef = 000001F000000000000000F0 /* WebKit.framework */;
+};
+
+00000LS00000000000000001 /* LaunchScreen.storyboard in Resources */ = {
+	isa = PBXBuildFile;
+	fileRef = 00000LS00000000000000000 /* LaunchScreen.storyboard */;
 };
 	};
 	rootObject = 00000250000000000000002A /* Project object */;
