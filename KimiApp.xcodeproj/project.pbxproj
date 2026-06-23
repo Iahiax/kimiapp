@@ -355,7 +355,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_MODULES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KimiApp/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
