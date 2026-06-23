@@ -1,9 +1,9 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
 
-    var webView: WKWebView!
+    private var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +11,26 @@ class ViewController: UIViewController {
         let config = WKWebViewConfiguration()
         config.preferences.javaScriptEnabled = true
 
-        webView = WKWebView(frame: self.view.bounds, configuration: config)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(webView)
+        webView = WKWebView(frame: .zero, configuration: config)
+        webView.navigationDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
 
-        if let htmlPath = Bundle.main.path(forResource: "index", ofType: "html") {
-            let html = try! String(contentsOfFile: htmlPath, encoding: .utf8)
-            webView.loadHTMLString(html, baseURL: nil)
+        view.addSubview(webView)
+
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
+        loadLocalHTML()
+    }
+
+    private func loadLocalHTML() {
+        if let path = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Resources") {
+            let url = URL(fileURLWithPath: path)
+            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }
     }
 }
